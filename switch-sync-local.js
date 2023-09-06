@@ -22,14 +22,13 @@ function filterIds(currentId) {
 function statusHandlerCallback(e) {
   debug(JSON.stringify(e));
 
-  if (components.indexOf(e.component) === 0) {
-    let currentId = parseInt(e.component.slice(7));
-    let targetIds = filterIds(currentId);
+  if (components.indexOf(e.component) !== -1) {
+    let targetIds = filterIds(e.id);
 
     let nextState = e.delta && e.delta.output;
     let isValid = nextState === false || nextState === true;
 
-    debug(JSON.stringify({ nextState: nextState, isValid: isValid, currentId: currentId, targetIds: targetIds }));
+    debug(JSON.stringify({ nextState: nextState, isValid: isValid, id: e.id, targetIds: targetIds }));
 
     if (isValid && e.delta.source === "switch") {
       for (let i = 0; i < targetIds.length; i++) {
@@ -41,5 +40,4 @@ function statusHandlerCallback(e) {
   }
 }
   
-  Shelly.addStatusHandler(statusHandlerCallback);
-  
+Shelly.addStatusHandler(statusHandlerCallback);

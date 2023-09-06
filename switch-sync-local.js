@@ -22,7 +22,7 @@ function filterIds(currentId) {
 function statusHandlerCallback(e) {
   debug(JSON.stringify(e));
 
-  if (component.indexOf(e.component) === 0) {
+  if (components.indexOf(e.component) === 0) {
     let currentId = parseInt(e.component.slice(7));
     let targetIds = filterIds(currentId);
 

@@ -3,7 +3,7 @@ let CONFIG = {
   debug: false,
   remote: {
     ip: '192.168.0.1',
-    id: '0'
+    id: 0
   }
 };
 
@@ -47,7 +47,7 @@ function statusHandlerCallback(e) {
     let nextState = e.delta && e.delta.output;
     let isValid = nextState === false || nextState === true;
 
-    debug(JSON.stringify({ nextState, isValid }));
+    debug(JSON.stringify({ nextState: nextState, isValid: isValid }));
 
     if (isValid && e.delta.source === "switch") {
       print('Send to remote on=' + nextState);

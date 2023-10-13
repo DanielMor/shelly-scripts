@@ -13,9 +13,9 @@ i4-kitchen.js: My Shelly i4
 Example of setting a random color on a Shelly RGBW2 
 
 
-dimming.js: Control Shelly dimmer 1/2
+dimming.js: Control Shelly dimmer 1/2 and Shelly RGBW2 white/color
 ===
-Control a Shelly dimmer 1/2 from a button input.
+Control a Shelly dimmer 1/2 or Shelly RGBW2 from a button input.
 Single Click: Toggle the light state;
 Double Click: Turn on with a fixed brightness;
 Long Press: Start dimming alternate down or up;
